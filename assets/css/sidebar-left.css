@@ -1,0 +1,396 @@
+/* Custom CSS to move sidebar to left side */
+
+/* Profile image size adjustment */
+body #main .image.main {
+    height: auto !important;
+    max-width: 300px !important;
+    margin: 0 auto 2em auto !important;
+}
+
+body #main .image.main img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 300px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* Desktop - Move header to left side */
+body #header {
+    left: 0 !important;
+    right: auto !important;
+    z-index: 10002 !important;
+    overflow-y: auto !important;
+    position: fixed !important;
+    width: 16em !important;
+}
+
+/* Ensure sidebar content doesn't overflow */
+body #header > header {
+    padding: 2em 1.2em !important;
+}
+
+/* Prevent name from wrapping to multiple lines */
+body #header > header h1 {
+    white-space: nowrap !important;
+}
+
+body #header > nav ul li a {
+    font-size: 0.95em !important;
+    padding: 0.75em 0 !important;
+}
+
+/* Fix navigation active and hover states for black sidebar */
+body #header > nav ul li a.active {
+    background: transparent !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+body #header > nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+}
+
+body #header > footer {
+    padding: 1.2em !important;
+}
+
+body #wrapper {
+    padding-left: 17em !important;
+    padding-right: 1em !important;
+    max-width: none !important;
+    margin: 0 !important;
+    width: auto !important;
+}
+
+/* Add top margin to main content - reduced for tighter spacing */
+body #main {
+    padding-top: 1em !important;
+}
+
+/* Make text color darker/blacker */
+body #main {
+    color: #111 !important;
+}
+
+body #main h1, body #main h2, body #main h3, body #main h4, body #main h5, body #main h6 {
+    color: #000 !important;
+}
+
+body #main p, body #main li {
+    color: #111 !important;
+}
+
+/* Remove container constraints and center content properly */
+body .container {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+    width: auto !important;
+}
+
+/* Fix titleBar to always stay in place */
+body #titleBar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 10001 !important;
+}
+
+/* Disable hover functionality for title bar name */
+body #titleBar .title a {
+    color: #fff !important;
+    border: none !important;
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+/* Reduce hamburger button width for tighter spacing */
+body #titleBar .toggle {
+    width: 60px !important;
+}
+
+body #titleBar .toggle:before {
+    width: 60px !important;
+}
+
+/* Reduce top margin of first section for tighter spacing */
+body #main section:first-child .container {
+    padding-top: 0.5em !important;
+}
+
+/* Reduce top margin of header.major for tighter spacing */
+body .container header.major {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Profile section layout for desktop */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+
+.profile-text {
+    flex: 1;
+}
+
+.profile-text h2 {
+    text-align: center;
+}
+
+.profile-text ul {
+    text-align: center;
+}
+
+.profile-text ul li {
+    text-align: center;
+}
+
+.profile-image {
+    flex: 0 0 300px;
+}
+
+/* Override image styles within profile section */
+.profile-section .image.main {
+    height: auto !important;
+    max-width: 300px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.profile-section .image.main img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 300px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Mobile layout - stack vertically */
+@media screen and (max-width: 1024px) {
+    .profile-section {
+        flex-direction: column;
+        gap: 0 !important;
+        margin-bottom: 2em;
+    }
+    
+    .profile-text {
+        order: 2;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    .profile-image {
+        flex: none;
+        order: 1; /* Put image before text on mobile */
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    .profile-section .image.main {
+        margin: 0 auto 0 auto !important;
+        max-width: 250px !important;
+        padding: 0 !important;
+    }
+    
+    .profile-section .image.main img {
+        max-height: 250px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+      /* Force line break on mobile for name */
+    .profile-text h2 br {
+        display: block !important;
+    }
+
+    .profile-text h2 {
+        line-height: 1.2 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0.5em !important;
+        padding-top: 0 !important;
+    }
+    
+    .profile-text ul {
+        text-align: center !important;
+        margin-top: 0 !important;
+        margin-bottom: 1em !important;
+        padding-top: 0 !important;
+    }
+    
+    .profile-text ul li {
+        text-align: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Force line break in header section for affiliation */
+    header br {
+        display: block !important;
+    }
+
+    body #header {
+        left: 0 !important;
+        right: auto !important;
+        top: 60px !important;
+        height: calc(100% - 60px) !important;
+        width: 15em !important;
+        z-index: 10002 !important;
+        overflow-y: auto !important;
+        -moz-transform: translateX(-15em) !important;
+        -webkit-transform: translateX(-15em) !important;
+        -ms-transform: translateX(-15em) !important;
+        transform: translateX(-15em) !important;
+    }
+
+    /* Adjust sidebar content for mobile */
+    body #header > header {
+        padding: 1.5em 1em !important;
+    }
+
+    body #header > nav ul li a {
+        font-size: 0.85em !important;
+        padding: 0.6em 0 !important;
+    }
+
+    body #header > footer {
+        padding: 1em !important;
+    }
+
+    body #wrapper {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Add more top margin on mobile - reduced for tighter spacing */
+    body #main {
+        padding-top: 1em !important;
+    }
+
+    body #titleBar .toggle {
+        left: 0 !important;
+        right: auto !important;
+    }
+
+    body #titleBar .toggle:before {
+        left: 0 !important;
+        right: auto !important;
+    }
+
+    body #titleBar .title {
+        padding-left: 4em !important;
+    }
+}
+
+    body.header-visible #wrapper {
+        -moz-transform: translateX(15em) !important;
+        -webkit-transform: translateX(15em) !important;
+        -ms-transform: translateX(15em) !important;
+        transform: translateX(15em) !important;
+    }
+
+    /* Keep titleBar fixed - don't move it */
+    body.header-visible #titleBar {
+        -moz-transform: translateX(0) !important;
+        -webkit-transform: translateX(0) !important;
+        -ms-transform: translateX(0) !important;
+        transform: translateX(0) !important;
+    }
+
+    /* Hide title text when hamburger menu is open */
+    body.header-visible #titleBar .title {
+        display: none !important;
+    }
+
+    body.header-visible #header {
+        -moz-transform: translateX(0) !important;
+        -webkit-transform: translateX(0) !important;
+        -ms-transform: translateX(0) !important;
+        transform: translateX(0) !important;
+    }
+
+/* Small - Mobile sidebar from left */
+@media screen and (max-width: 736px) {
+    body #header {
+        left: 0 !important;
+        right: auto !important;
+        top: 60px !important;
+        height: calc(100% - 60px) !important;
+        width: 16em !important;
+        z-index: 10002 !important;
+        overflow-y: auto !important;
+        -moz-transform: translateX(-16em) !important;
+        -webkit-transform: translateX(-16em) !important;
+        -ms-transform: translateX(-16em) !important;
+        transform: translateX(-16em) !important;
+    }
+
+    /* Adjust sidebar content for small mobile */
+    body #header > header {
+        padding: 1.2em 1em !important;
+    }
+
+    body #header > header h1 {
+        font-size: 1.4em !important;
+    }
+
+    body #header > nav ul li a {
+        font-size: 0.9em !important;
+        padding: 0.6em 0 !important;
+    }
+
+    body #header > footer {
+        padding: 1em !important;
+    }
+
+    body.header-visible #wrapper {
+        -moz-transform: translateX(16em) !important;
+        -webkit-transform: translateX(16em) !important;
+        -ms-transform: translateX(16em) !important;
+        transform: translateX(16em) !important;
+    }
+
+    /* Add top margin for small mobile - reduced for tighter spacing */
+    body #main {
+        padding-top: 1em !important;
+    }
+
+    body #titleBar .title {
+        padding-left: 4em !important;
+    }
+
+    /* Keep titleBar fixed - don't move it */
+    body.header-visible #titleBar {
+        -moz-transform: translateX(0) !important;
+        -webkit-transform: translateX(0) !important;
+        -ms-transform: translateX(0) !important;
+        transform: translateX(0) !important;
+    }
+
+    /* Hide title text when hamburger menu is open on small mobile */
+    body.header-visible #titleBar .title {
+        display: none !important;
+    }
+    
+    /* Force line break on small mobile for name */
+    .profile-text h2 br {
+        display: block !important;
+    }
+    
+    .profile-text h2 {
+        line-height: 1.3 !important;
+    }
+    
+    /* Force line break in header section for affiliation */
+    header br {
+        display: block !important;
+    }
+}
